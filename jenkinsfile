@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('world') {
+            steps {
+                echo 'this is a second stage'
+            }
+        }
+        stage('3') {
+            steps {
+                echo 'this is a third stage'
+            }
+        }
+        stage('maven') {
+            steps {
+                sh 'mvn clean test'
+            }
+        }
+    }
+}
